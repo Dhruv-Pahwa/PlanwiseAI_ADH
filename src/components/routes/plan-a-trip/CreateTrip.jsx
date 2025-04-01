@@ -292,8 +292,8 @@ function CreateTrip({createTripPageRef}) {
               <span className="flex gap-2">
                 <span className="text-center w-full opacity-90 mx-auto tracking-tight text-primary/80">
                   {user
-                    ? "Logged In Securely to JourneyJolt with Google Authentication"
-                    : "Sign In to JourneyJolt with Google Authentication Securely"}
+                    ? "Logged In Securely to PlanwiseAI with Google Authentication"
+                    : "Sign In to PlanwiseAI with Google Authentication Securely"}
                 </span>
               </span>
               {user ? (

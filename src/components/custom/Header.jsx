@@ -43,8 +43,14 @@ function Header({ headerRef }) {
       {/* Center-aligned links */}
       <div className="hidden md:flex items-center gap-8 text-lg font-medium">
         <Link to="/" className="hover:text-blue-600">Home</Link>
-        <Link to="/" className="hover:text-blue-600">Popular Plans</Link>
-        <a href="/contact.html" className="hover:text-blue-600">Contact Us</a>      </div>
+        <a href="#popular-plans" className="hover:text-blue-600 scroll-smooth">
+          Popular Plans
+        </a>
+        <a href="#how-it-works" className="hover:text-blue-600 scroll-smooth">
+          How It Works
+        </a>
+        <a href="/contact.html" className="hover:text-blue-600">Contact Us</a>
+      </div>
       
       <div className="flex items-center gap-5">
         <ThemeToggle />
