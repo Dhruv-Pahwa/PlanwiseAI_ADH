@@ -3,90 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maha Kumbh</title>
+    <title>Maha Kumbh - Spiritual Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #8e44ad;
+            --secondary: #3498db;
+            --accent: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #27ae60;
+            --info: #2980b9;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
         .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        h1, h2 {
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 30px 0 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .hero-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .overview {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .highlight-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .highlight-content {
+            padding: 25px;
+        }
+        
+        .day-plan-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .day-plan {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-top: 3px solid var(--accent);
+        }
+        
+        .day-plan:hover {
+            transform: translateY(-5px);
+        }
+        
+        .day-plan strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
         }
-        .event-img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            border-radius: 10px;
+        
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
         }
-        .details {
-            margin-top: 20px;
+        
+        .budget {
+            border-top: 3px solid var(--success);
         }
-        .day-plan {
-            background: #fff3cd;
-            padding: 10px;
-            margin: 10px 0;
-            border-left: 5px solid #ff9800;
+        
+        .best-time {
+            border-top: 3px solid var(--info);
         }
-        .budget, .best-time {
-            background: #e3f2fd;
-            padding: 10px;
-            margin-top: 20px;
-            border-left: 5px solid #2196f3;
-        }
+        
         .btn-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
         }
+        
         .btn {
-            display: inline-block;
-            width: 200px;
-            padding: 10px;
-            text-align: center;
-            background: #4CAF50;
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
         }
+        
+        .btn-book {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-book:hover {
+            background: #7d3c98;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(142, 68, 173, 0.3);
+        }
+        
         .btn-invite {
-            background: #007BFF;
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-invite:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        .icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .highlight-card {
+                flex-direction: column;
+            }
+            
+            .highlight-img {
+                height: 200px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Maha Kumbh Itinerary</h1>
-        <img src="https://hindi.news24online.com/wp-content/uploads/2024/11/7dadc715800333.56297178b908b.jpg" alt="Maha Kumbh" class="event-img">
-        <div class="details">
-            <h2>Overview</h2>
-            <p>Maha Kumbh is the world's largest spiritual gathering, held once every 12 years at the confluence of the Ganges, Yamuna, and the mythical Saraswati rivers. Millions of devotees, saints, and tourists come together to take a holy dip, which is believed to cleanse one's sins and lead to salvation. The festival is known for its grand processions, where Naga Sadhus (ascetics) and spiritual leaders march with chants and religious fervor. Apart from its religious significance, Maha Kumbh is also a cultural and intellectual hub, featuring spiritual discourses, Vedic teachings, devotional music, and artistic performances. The fair offers a unique blend of tradition, devotion, and celebration, making it a once-in-a-lifetime experience.</p>
-            
-            <h2>Day-wise Plan</h2>
-            <div class="day-plan"><strong>Day 1:</strong> Arrival & local sightseeing in Prayagraj.</div>
-            <div class="day-plan"><strong>Day 2:</strong> Take a holy dip in the Ganges & explore Akshayavat.</div>
-            <div class="day-plan"><strong>Day 3:</strong> Attend cultural performances & spiritual discourses.</div>
-
-            <h2>Budget Estimate</h2>
-            <div class="budget">Budget range: ₹25,000 - ₹65,000 (including accommodation, food, transport)</div>
-
-            <h2>Best Time to Visit</h2>
-            <div class="best-time">Next Maha Kumbh: January - February 2025</div>
-
-            <div class="btn-container">
-                <a href="https://www.makemytrip.com/flight/search?tripType=O&itinerary=IXD-DEL-12/03/2025&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1741787659074&forwardFlowRequired=true&action=FLTSRCH&intl=false&cmp=SEM%7CD%7CDF%7CG%7CRoute%7CMigrant%7CRoute-Bot1000_DT%7CDF_Route_Allahabad_Delhi_Exact%7CAllahabad_Delhi_Exact%7CRSA&gad_source=1&gclid=Cj0KCQiAlbW-BhCMARIsADnwasrUIhwVlTK5wUBMrOQlt7LCajEXy9q9iT_upaEyllNgxTEe4fGOkNcaAuRcEALw_wcB&isSemFlow=true" class="btn">Book Now</a>
-                <a href="mailto:?subject=Join me for Maha Kumbh 2025!&body=Hey! Let's go to Maha Kumbh 2025 together." class="btn btn-invite">Invite</a>
+        <header>
+            <h1 className="font-black text-5xl md:text-9xl bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text text-center text-transparent pb-4">Maha Kumbh Mela</h1>
+            <p>The World's Largest Spiritual Gathering</p>
+        </header>
+        
+        <div class="hero-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/w041ZQwGyvk?autoplay=1&mute=1&loop=1&playlist=w041ZQwGyvk&controls=0&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="content">
+                <h2>Sacred Journey to Enlightenment</h2>
+                <p class="overview">
+                    Maha Kumbh is the world's largest spiritual gathering, held once every 12 years at the sacred confluence of the Ganges, Yamuna, and the mythical Saraswati rivers. Millions of devotees, saints, and seekers come together for this divine event where a single holy dip is believed to cleanse one's sins and lead to salvation. Experience the vibrant processions of Naga Sadhus, enlightening spiritual discourses, devotional music, and the profound energy of collective consciousness.
+                </p>
+                
+                <div class="highlight-card">
+                    <img src="https://res.cloudinary.com/kmadmin/image/upload/v1730108430/kiomoi/kumbh_mela_2024_9309.jpg" alt="Kumbh Mela Gathering" class="highlight-img">
+                    <div class="highlight-content">
+                        <h3>Why Attend Maha Kumbh?</h3>
+                        <p>Witness ancient traditions come alive, participate in sacred rituals, and immerse yourself in India's spiritual heritage. The Maha Kumbh offers a unique opportunity for personal transformation amidst the largest peaceful gathering on Earth.</p>
+                    </div>
+                </div>
+                
+                <h2>Journey Itinerary</h2>
+                <div class="day-plan-container">
+                    <div class="day-plan">
+                        <strong><i class="fas fa-calendar-day icon"></i> Day 1: Arrival in Prayagraj</strong>
+                        <p>Arrive in the holy city, check into your accommodation, and visit Triveni Sangam (confluence point) for evening aarti ceremony.</p>
+                    </div>
+                    <div class="day-plan">
+                        <strong><i class="fas fa-water icon"></i> Day 2: Sacred Bath & Exploration</strong>
+                        <p>Take the auspicious morning dip at Sangam, visit Akshayavat (immortal banyan tree), and explore the Kumbh Mela grounds.</p>
+                    </div>
+                    <div class="day-plan">
+                        <strong><i class="fas fa-chalkboard-teacher icon"></i> Day 3: Spiritual Enlightenment</strong>
+                        <p>Attend discourses by revered saints, experience cultural performances, and participate in evening Ganga aarti.</p>
+                    </div>
+                </div>
+                
+                <div class="info-cards">
+                    <div class="info-card budget">
+                        <h3><i class="fas fa-rupee-sign"></i> Budget Estimate</h3>
+                        <p>₹25,000 - ₹65,000</p>
+                        <p>(including accommodation, food, transport)</p>
+                    </div>
+                    <div class="info-card best-time">
+                        <h3><i class="far fa-calendar-alt"></i> Best Time to Visit</h3>
+                        <p>January - February 2025</p>
+                        <p>Next Maha Kumbh dates</p>
+                    </div>
+                </div>
+                
+                <div class="btn-container">
+                    <a href="https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-IXD-22/04/2025&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1745341779156&forwardFlowRequired=true&action=FLTSRCH&intl=false&cmp=SEM%7CD%7CDF%7CG%7CRoute%7CGrouped%7CRoute-ToptoMid_DT_Phrase%7CDF_Route_Exact_1%7CDelhi_Allahabad_Exact%7CRSA&gad_source=1&gbraid=0AAAAAD5Az1SnRQXPBtLjGn98krm2lUlYJ&gclid=Cj0KCQjwqv2_BhC0ARIsAFb5Ac_pt-OXB24Uf3wv0GP_ZmvtdVD2q-0Uyb6QAu9SgH0tEVB672k8MzIaAvA8EALw_wcB&isSemFlow=true" class="btn btn-book">
+                        <i class="fas fa-ticket-alt icon"></i> Book Your Journey
+                    </a>
+                    <a href="mailto:?subject=Join%20me%20for%20Maha%20Kumbh%202025!&body=Hey!%20Let's%20experience%20the%20spiritual%20transformation%20together%20at%20Maha%20Kumbh%202025.%20This%20sacred%20gathering%20happens%20only%20once%20every%2012%20years!" class="btn btn-invite">
+                        <i class="fas fa-user-friends icon"></i> Invite Friends
+                    </a>
+                </div>
             </div>
         </div>
     </div>

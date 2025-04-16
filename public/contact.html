@@ -1,114 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        /* Video Background */
-        .video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        .container {
-            display: flex;
-            width: 85%;
-            height: 75%;
-            border-radius: 12px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .image-section {
-            flex: 1.2;
-            background: url('https://m.media-amazon.com/images/I/81aQjyO9YfS.jpg') center/cover no-repeat;
-        }
-        .contact-section {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-            position: relative;
-        }
-        .contact-section h1 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .contact-section p, .contact-section h2 {
-            color: #444;
-            margin: 5px 0;
-        }
-        .contact-section a {
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-        /* Green Rounded Button - Adjusted Position */
-        .contact-button {
-            position: absolute;
-            bottom: 70px; /* Moved Up More */
-            right: 50px;  /* Slightly Left */
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-        .contact-button:hover {
-            background-color: #1EBE5D;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      width: 85%;
+      height: 75%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .image-section {
+      flex: 1.2;
+      background: url('https://m.media-amazon.com/images/I/81aQjyO9YfS.jpg') center/cover no-repeat;
+    }
+
+    .contact-section {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      position: relative;
+    }
+
+    .top-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .top-content h1 {
+      color: #333;
+      margin: 0;
+    }
+
+    .top-content p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #444;
+      margin: 0;
+    }
+
+    .top-content h2 {
+      color: #444;
+      margin: 0;
+    }
+
+    .contact-section a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    .spacer {
+      margin-top: 18px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .social-links a {
+      font-size: 18px;
+    }
+
+    .section-label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .contact-button {
+      align-self: flex-end;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .contact-button:hover {
+      background-color: #1EBE5D;
+    }
+  </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <video class="video-bg" autoplay muted loop>
-        <source src="7399-200092386_medium.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div class="container">
-        <!-- Image Section on the Left -->
-        <div class="image-section"></div>
-        
-        <!-- Contact Details on the Right -->
-        <div class="contact-section">
-            <h1>Contact Us</h1>
-            <p><b>Feel free to reach out to us anytime.</b></p>
-            <h2>Email: <a href="mailto:akshara.singh@bscdsaih.christuniversity.in">akshara.singh@bscdsaih.christuniversity.in</a></h2>
-            <h2>Email: <a href="mailto:dhruv.pahwa@bscdsaih.christuniversity.in">dhruv.pahwa@bscdsaih.christuniversity.in</a></h2>
-            <h2>Email: <a href="mailto:harshita.jain@bscdsaih.christuniversity.in">harshita.jain@bscdsaih.christuniversity.in</a></h2>
-            <p><b>Connect with us on LinkedIn:</b></p>
-            <h2><a href="https://www.linkedin.com/in/dhruv-pahwa-854205189/?originalSubdomain=in">Dhruv Pahwa</a></h2>
-            <h2><a href="https://www.linkedin.com/in/akshara-singh-a2012028b/">Akshara Singh</a></h2>
-            <h2><a href="https://www.linkedin.com/in/harshita-jain-hjartxstudio/">Harshita Jain</a></h2>
+  <video class="video-bg" autoplay muted loop>
+    <source src="7399-200092386_medium.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-            <!-- WhatsApp Contact Button -->
-            <button class="contact-button" onclick="window.open('https://wa.me/919653057566', '_blank')">Contact Us</button>
+  <div class="container">
+    <div class="image-section"></div>
+
+    <div class="contact-section">
+      <div class="top-content">
+        <h1>Contact Us</h1>
+        <p style="font-size: 20px;"><b>Feel free to reach out to us anytime.</b></p>
+        <h2>Email: <a href="mailto:team@planwiseai.com">team@planwiseai.com</a></h2>
+
+        <div class="spacer"></div>
+
+        <div class="social-links">
+          <div class="section-label">Follow us on:</div>
+          <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+          <a href="https://instagram.com" target="_blank">📸 Instagram</a>
         </div>
+
+        <div class="spacer"></div>
+
+        <div class="section-label">Connect with us individually on LinkedIn:</div>
+        <h2><a href="https://www.linkedin.com/in/dhruv-pahwa-854205189/?originalSubdomain=in">Dhruv Pahwa</a></h2>
+        <h2><a href="https://www.linkedin.com/in/akshara-singh-a2012028b/">Akshara Singh</a></h2>
+        <h2><a href="https://www.linkedin.com/in/harshita-jain-hjartxstudio/">Harshita Jain</a></h2>
+      </div>
+
+      <button class="contact-button" onclick="window.open('https://wa.me/919653057566', '_blank')">Contact Us</button>
     </div>
+  </div>
 </body>
 </html>
