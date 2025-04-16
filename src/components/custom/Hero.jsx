@@ -100,8 +100,6 @@ function Homepage({ heroRef }) {
                   to={plan.name === "Maha Kumbh" ? "/public/mahakumbh.html" : 
                       plan.name === "Rio Carnival" ? "/public/rio.html" : 
                       "/public/latomatina.html"}
-                  target="_blank" 
-                  rel="noopener noreferrer"
                 >
                   <Button className="mt-4 bg-primary text-white dark:bg-black dark:text-white transition-all duration-300 hover:scale-105">
                     Explore Plan
