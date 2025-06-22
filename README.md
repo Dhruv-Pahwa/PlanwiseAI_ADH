@@ -5,7 +5,7 @@
 🚀 **Live Demo**: [https://ai-travel-adh.vercel.app](https://ai-travel-adh.vercel.app)
 
 ---
-
+ 
 ## 🌟 Features
 
 - AI-generated itineraries with Gemini API
